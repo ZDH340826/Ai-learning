@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 学习计划生成器</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div class="intro">
+          <p class="eyebrow">Vibe Coding Lesson 01</p>
+          <h1>AI 学习计划生成器</h1>
+          <p>输入目标和约束，生成一份可执行、可验收的学习计划。</p>
+        </div>
+
+        <form id="planForm" class="form">
+          <label>
+            学习目标
+            <input id="goal" name="goal" type="text" placeholder="例如：学习 Python Web 开发" required minlength="2" />
+          </label>
+
+          <label>
+            当前基础
+            <textarea id="level" name="level" placeholder="例如：会 Python 基础语法，但没有做过 Web 项目" required minlength="2"></textarea>
+          </label>
+
+          <div class="grid">
+            <label>
+              每天分钟数
+              <input id="daily_minutes" name="daily_minutes" type="number" min="15" max="480" value="60" required />
+            </label>
+
+            <label>
+              计划周期（周）
+              <input id="weeks" name="weeks" type="number" min="1" max="24" value="4" required />
+            </label>
+          </div>
+
+          <button id="submitButton" type="submit">生成计划</button>
+          <p id="error" class="error" role="alert"></p>
+        </form>
+      </section>
+
+      <section id="result" class="result" aria-live="polite"></section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

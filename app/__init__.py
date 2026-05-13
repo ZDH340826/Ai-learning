@@ -1,0 +1,2 @@
+"""Cat desktop pet application."""
+
